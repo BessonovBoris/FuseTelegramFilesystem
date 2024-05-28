@@ -14,7 +14,7 @@ pub struct TgClient {
 
 impl TgClient {
     pub async fn new(api_id: i32, api_hash: String, group_name: &str) -> TgClient {
-        let (sender, _reciever) = tokio::sync::mpsc::channel::<Box<Update>>(10000);
+        let (sender, _receiver) = tokio::sync::mpsc::channel::<Box<Update>>(10000);
 
         let client = Client::builder()
             .with_tdlib_parameters(
@@ -38,6 +38,8 @@ impl TgClient {
         worker.start();
 
         let client = worker.bind_client(client).await.unwrap();
+
+        log::info!("Here");
 
         loop {
             if worker.wait_client_state(&client).await.unwrap() == ClientState::Opened {
