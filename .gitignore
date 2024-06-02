@@ -1,5 +1,5 @@
 /target
 
-./src/libtdjson.so
-./src/libtdjson.so.1.8.0
-./src/tddb
+src/libtdjson.so
+src/libtdjson.so.1.8.0
+src/tddb/
