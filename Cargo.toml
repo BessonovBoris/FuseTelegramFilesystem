@@ -5,10 +5,13 @@ edition = "2021"
 build = "build.rs"
 
 [dependencies]
+fuse = "0.3.1"
 rust-tdlib = "0.4.3"
-#fuser = "0.14.0"
 tokio = {version = "1.37.0", features = ["full"]}
 env_logger = "0.11.3"
 log = "0.4.21"
 clap = "4.5.4"
 libc = "0.2.155"
+time = "0.1.45"
+serde_json = "1.0.117"
+serde = { version = "1.0.202", features = ["derive"] }
